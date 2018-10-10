@@ -26,6 +26,19 @@ function main() {
   bst.dsfPreOrder();
   console.log('-------------------------------------------------------');
   bst.dsfPostOrder();
+
+  const arr = [128, 97, 121, 123, 98, 97, 105];
+  function maxProfit(sharesArr) {
+    let currProfit = 0;
+    let nextProfit = 0;
+    for (let i = 0; i < sharesArr.length; i++) {
+      for (let j = 0; j < sharesArr.length; j++)
+        currProfit = arr[j + 1] - arr[i];
+
+    }
+  }
+  maxProfit(arr);
+
 }
 
 main();
