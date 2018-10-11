@@ -16,4 +16,4 @@ function linearSearch(arr, value) {
     return `It took ${tries} tries to find that the value isn't in the data set.`;
 }
 
-console.log(linearSearch(data, 5));
+console.log(linearSearch(data, 9));

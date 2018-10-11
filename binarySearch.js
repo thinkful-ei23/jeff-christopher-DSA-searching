@@ -25,13 +25,11 @@ function binarySearch(arr, value, start = 0, end = arr.length - 1, tries = 0) {
 
     }
     else if (valueAtMiddleIndex < value) {
-        // tries++;
         return binarySearch(arr, value, middleIndex + 1, end, tries);
     }
     else if (valueAtMiddleIndex > value) {
-        // tries++;
         return binarySearch(arr, value, start, middleIndex - 1, tries);
     }
 }
 
-console.log(binarySearch(sortedData, 81));
+console.log(binarySearch(sortedData, 2));
