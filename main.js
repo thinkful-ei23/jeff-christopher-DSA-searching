@@ -21,23 +21,39 @@ function main() {
   bst.insert(90);
   bst.insert(22);
 
-  bst.dsfInOrder();
-  console.log('-------------------------------------------------------');
-  bst.dsfPreOrder();
-  console.log('-------------------------------------------------------');
-  bst.dsfPostOrder();
+  // bst.dsfInOrder();
+  // console.log('-------------------------------------------------------');
+  // bst.dsfPreOrder();
+  // console.log('-------------------------------------------------------');
+  // bst.dsfPostOrder();
 
+  'use strict';
   const arr = [128, 97, 121, 123, 98, 97, 105];
+  //     temp = -31 < -7
+  //        temp = -7
   function maxProfit(sharesArr) {
-    let currProfit = 0;
-    let nextProfit = 0;
+    let firstNum = 0;
+    let secondNum = 0;
+    let newArr = [];
+    let profit = 0;
     for (let i = 0; i < sharesArr.length; i++) {
-      for (let j = 0; j < sharesArr.length; j++)
-        currProfit = arr[j + 1] - arr[i];
-
+      for (let j = 0; j < sharesArr.length; j++) {
+        if (i < sharesArr.length - 1) {
+          firstNum = sharesArr[j + 1] - sharesArr[i];
+          secondNum = sharesArr[j + 2] - sharesArr[i];
+          if (firstNum < secondNum) {
+            firstNum = secondNum;
+            newArr.push(firstNum);
+            // console.log('I am first', firstNum);
+          }
+        }
+      }
     }
+    // console.log('new Arr', newArr);
+    return Math.max(...newArr);
   }
-  maxProfit(arr);
+
+  console.log(maxProfit(arr));
 
 }
 
